@@ -47,7 +47,7 @@ app.use(
 const store = MongoStore.create({
   mongoUrl: dbUrl,
   crypto : {
-    secret : 'mysuperscret',
+    secret : process.env.SECRET ,
   },
   touchAfter : 24 * 60 * 60, // Update session every 24 hours
 });
@@ -59,7 +59,7 @@ store.on("error", (e) => {
 app.use(
   session({
     store: store,
-    secret: "mysuperscret", // use a long, random string in production
+    secret: process.env.SECRET, // use a long, random string in production
     resave: false,
     saveUninitialized: true,
     cookie: { maxAge: 24 * 7 * 60 * 60 * 1000,
