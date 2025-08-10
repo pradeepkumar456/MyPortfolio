@@ -1,0 +1,131 @@
+<%- include('../layouts/flash') %>
+<style>
+    body {
+      font-size: 1rem;
+      line-height: 1.6;
+      background-color: #f8f9fa;
+    }
+
+    .contact-heading {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+
+    .form-control,
+    .btn {
+      font-size: 1rem;
+    }
+
+    .social-icons a {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      color: #333;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #0d6efd;
+    }
+
+    .info-section p,
+    .info-section a {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+/* 
+    .container {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    } */
+  </style>
+
+<body>
+
+  <div class="container">
+    <div class="row gy-5 align-items-start">
+      
+      <!-- Contact Info -->
+      <div class="col-12 col-md-6 info-section px-3 ">
+        <h2 class="contact-heading text-center mt-4 mb-3 p-1" style="background-color: bisque;">Get in Touch</h2>
+        <p><i class="bi bi-geo-alt-fill me-2"></i><strong>Address:</strong> Bareilly, Uttar Pradesh, India</p>
+        <p><i class="bi bi-envelope-fill me-2"></i><strong>Email:</strong> <a href="mailto:adigangwar1@gmail.com" style="text-decoration: none;">adigangwar1@gmail.com</a></p>
+        <p><i class="bi bi-telephone-fill me-2"></i><strong>Phone:</strong> +91 7452861837</p>
+        <p><i class="bi bi-clock-fill me-2"></i><strong>Working Hours:</strong> Mon - Sat (10:00 AM – 6:00 PM)</p>
+
+        <div class="social-icons mt-4">
+          <a href="https://github.com/pradeepkumar456" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/pradeep-kumar-gangwar" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://wa.me/917452861837?text=Hello%20Pradeep%2C%20I%20visited%20your%20portfolio." target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+        <hr class="d-block d-md-none my-4 ">
+      </div>
+    
+
+      <!-- Contact Form -->
+      <div class="col-12 col-md-6 px-3">
+        <h2 class="contact-heading text-center mt-4 mb-2 p-1"style="background-color: bisque;">Contact</h2>
+        <form class="needs-validation" action="/pradeepkumar/admin/message" method="POST" novalidate>
+          
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input class="form-control" type="text" id="name" name="name" placeholder="Enter your name" required />
+            <div class="invalid-feedback">Name is required!</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input class="form-control" type="email" id="email" name="email" placeholder="Enter your email" required />
+            <div class="invalid-feedback">Valid email is required!</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="mobileNo" class="form-label">Mobile No.</label>
+            <input class="form-control" type="tel" pattern="\d{10}" title="Enter 10-digit number" id="mobileNo" name="mobileNo" placeholder="Enter your number" required />
+            <div class="invalid-feedback">10-digit number is required!</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input class="form-control" type="text" id="city" name="city" placeholder="Enter your city" maxlength="20" required />
+            <div class="invalid-feedback">City is required!</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" rows="4" id="message" name="message" placeholder="Enter your message" required></textarea>
+            <div class="invalid-feedback">Message is required!</div>
+          </div>
+
+          <div class="text-start">
+            <button class="btn btn-outline-success px-4 " type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  </body>
+  <br/><br/>
+
+  <!-- Bootstrap JS for validation -->
+  <script>
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach((form) => {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>

@@ -1,0 +1,56 @@
+ <%- include('../layouts/flash') %>
+<%- include('../includes/slidebar') %>
+<style>
+  @media (min-width: 768px) {
+    .main-content-with-sidebar {
+      margin-left: 17rem; /* Adjust based on your sidebar width */
+    }
+  }
+  .card{
+    background-color:	#f7f3ee;
+    color:#212529;
+  }
+
+  .card-message {
+    transition: transform 0.2s ease;
+  }
+
+  .card-message:hover {
+    transform: translateY(-5px);
+  }
+
+  .avatar {
+    flex-shrink: 0;
+  }
+</style>
+
+<div class="container my-5 main-content-with-sidebar">
+  <h1 class="text-center mb-4">📩 All Messages</h1>
+
+  <div class="row g-4">
+    <% for(let user of allusers){ %>
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-sm card-message h-100 border-0 rounded-4 p-3">
+          <div class="d-flex align-items-center mb-2">
+            <div class="avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 1.2rem;">
+              <%= user.name[0].toUpperCase() %>
+            </div>
+            <div class="ms-3">
+              <h5 class="mb-0 fw-semibold"><%= user.name %></h5>
+              <small class="text-muted"><%= user.email %></small>
+            </div>
+          </div>
+
+          <p class="mb-1"><strong>📍 City:</strong> <%= user.city %></p>
+          <p class="mb-1"><strong>📞 Mobile:</strong> <%= user.mobileNo %></p>
+          <p class="mb-2"><strong>💬 Message:</strong> <%= user.message %></p>
+          <small class="text-muted d-block mb-2">🕒 <%= user.send_at.toLocaleString("en-hi")%></small>
+
+          <form method="post" action="/pradeepkumar/admin/message/<%= user._id %>?_method=Delete">
+            <button class="btn btn-sm btn-outline-danger rounded-4 px-4">🗑️ Delete</button>
+          </form>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</div>

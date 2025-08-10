@@ -1,0 +1,181 @@
+<%- include('../layouts/flash') %>
+<style>
+  :root {
+    --primary-color: #0d6efd;
+  }
+
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f8f9fa;
+    font-size: 1rem; /* base = 16px */
+    line-height: 1.6;
+  }
+
+  .resume {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    border-bottom: 0.2rem solid var(--primary-color);
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .resume h2 {
+    font-size: 2rem;
+  }
+
+  .resume h4 {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+  }
+
+  ul {
+    padding-left: 1.25rem;
+  }
+
+  @media (max-width: 576px) {
+    .resume {
+      padding: 1rem;
+    }
+  }
+
+  .fa-brands {
+    font-size: 1.7rem;
+  }
+  .fa-whatsapp {
+    color: rgb(15, 175, 15);
+  }
+  .fa-square-github {
+    color: black;
+  }
+</style>
+
+<body>
+  <div class="container my-5">
+    <div class="resume mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-4">
+        <h2 class="fw-bold" style="color: var(--primary-color)">
+          Pradeep Kumar
+        </h2>
+        <p class="text-muted mb-1">Full-Stack Web Developer | MCA Student</p>
+        <p>Email: adigangwar1@gmail.com | Phone: +91-7452861837</p>
+        <a href="https://github.com/pradeepkumar456" target="_blank"
+          ><i class="fa-brands fa-square-github"></i
+        ></a>
+        |
+        <a
+          href="https://www.linkedin.com/in/pradeep-kumar-gangwar"
+          target="_blank"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        |
+        <a
+          href="https://wa.me/917452861837?text=Hello%20Pradeep%2C%20I%20visited%20your%20portfolio."
+          target="_blank"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <!-- Education -->
+      <div class="mb-4">
+        <h4 class="section-title">Education</h4>
+        <ul class="list-unstyled">
+          <li>
+            <strong>MCA – AKTU University, Lucknow</strong><br />
+            2023 – 2025<br />
+            CGPA: 8.5
+          </li>
+          <li class="mt-3">
+            <strong>BSc (Computer Science)</strong><br />
+            2020 – 2023<br />
+            M.J.P.R. University, Bareilly<br />
+            CGPA: 8.0
+          </li>
+        </ul>
+      </div>
+
+      <!-- Skills -->
+      <div class="mb-4">
+        <h4 class="section-title">Technical Skills</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <ul>
+              <li>HTML5, CSS3, Bootstrap</li>
+              <li>JavaScript, EJS</li>
+              <li>React (Basic)</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li>Node.js, Express.js</li>
+              <li>MongoDB, Mongoose</li>
+              <li>Git, GitHub</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="mb-4">
+        <h4 class="section-title">Projects</h4>
+        <ul class="list-unstyled">
+          <li>
+            <strong>Property Booking Website</strong> – Full-stack project using
+            Node.js, Express, MongoDB, Bootstrap.
+          </li>
+          <li class="mt-2">
+            <strong>Hotel Booking Web App</strong> – Frontend using Bootstrap
+            and backend with EJS templating and MongoDB.
+          </li>
+          <li class="mt-2">
+            <strong>Personal Portfolio</strong> – HTML, CSS, JavaScript
+            portfolio with contact form and resume download.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Experience -->
+      <div class="mb-4">
+        <h4 class="section-title">Experience</h4>
+        <p>
+          Currently seeking internship or junior developer role to apply my web
+          development skills in real-world projects.
+        </p>
+      </div>
+
+      <!-- Languages -->
+      <div class="mb-4">
+        <h4 class="section-title">Languages</h4>
+        <ul>
+          <li>English – Fluent</li>
+          <li>Hindi – Native</li>
+        </ul>
+      </div>
+
+      <!-- Download Button -->
+      <div class="text-center mt-4">
+        <a
+          href="assets/pradeepkumar.pdf"
+          download="pradeepkumar.pdf"
+          class="btn btn-primary"
+        >
+          Download Resume (PDF)
+        </a>
+      </div>
+    </div>
+  </div>
+</body>

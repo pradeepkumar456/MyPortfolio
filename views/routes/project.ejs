@@ -1,0 +1,79 @@
+<%- include('../layouts/flash') %>
+<style>
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 1rem;
+    opacity: 0.95;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border: none;
+  }
+
+  .card:hover {
+    transform: translateY(-5px) scale(1.03);
+    opacity: 1;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-title {
+    font-weight: 600;
+  }
+
+  .btn-outline-primary {
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+  }
+</style>
+
+<section class="container" id="projects">
+  <h2 class="text-center text-primary mt-4 mb-5">Academic Projects</h2>
+
+  <div class="row g-4 mb-5">
+    <!-- Project Card 1 -->
+    <div class="col-sm-12 col-md-4 mb-3">
+      <div class="card h-100">
+        <img src="/images/Screenshot (31).png" class="card-img-top rounded-top" alt="Property Listing Website">
+        <div class="card-body">
+          <h5 class="card-title">Property Listing & Booking Website</h5>
+          <p class="card-text">
+            A full-stack property booking platform using Node.js, Express, MongoDB, EJS, and Bootstrap.
+          </p>
+          <div class="mb-2">
+            <span class="badge bg-success me-1">Node.js</span>
+            <span class="badge bg-info text-dark me-1">MongoDB</span>
+            <span class="badge bg-primary me-1">Bootstrap</span>
+          </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between bg-white border-0">
+          <a href="https://luxehaven-rg2u.onrender.com/listings" class="btn btn-outline-primary btn-sm" target="_blank">Live Demo</a>
+          <a href="https://github.com/pradeepkumar456/Hotel-Booking-Project" class="btn btn-outline-secondary btn-sm" target="_blank">Github View</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Card 2 -->
+    <div class="col-sm-12 col-md-4 mb-3">
+      <div class="card h-100">
+        <img src="/images/Screenshot (30).png" class="card-img-top rounded-top" alt="Portfolio Website">
+        <div class="card-body">
+          <h5 class="card-title">Personal Portfolio Website</h5>
+          <p class="card-text">
+            A responsive and animated portfolio website to showcase projects and skills using EJS templates and Express.
+          </p>
+          <div class="mb-2">
+            <span class="badge bg-success me-1">Express</span>
+            <span class="badge bg-warning text-dark me-1">MongoDB</span>
+            <span class="badge bg-dark me-1">EJS</span>
+          </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between bg-white border-0">
+          <a href="https://portfolioproject-42v0.onrender.com" class="btn btn-outline-primary btn-sm" target="_blank">Live Demo</a>
+          <a href="#" class="btn btn-outline-secondary btn-sm">Github View</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

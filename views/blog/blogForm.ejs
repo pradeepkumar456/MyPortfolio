@@ -1,0 +1,49 @@
+<%- include('../includes/slidebar') %>
+<%- include('../layouts/flash') %>
+<div class="container my-5 ">
+  <br/><br/>
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center">
+          <h4>Create a New Blog Post</h4>
+        </div>
+        <div class="card-body">
+          <form action="/pradeepkumar/blog/new" method="POST">
+            <div class="mb-3">
+              <label for="title" class="form-label">Blog Title</label>
+              <input 
+                type="text" 
+                name="title" 
+                id="title" 
+                class="form-control" 
+                placeholder="Enter blog title" 
+                required 
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="content" class="form-label">Content</label>
+              <textarea 
+                name="content" 
+                id="content" 
+                rows="6" 
+                class="form-control" 
+                placeholder="Write your blog content here" 
+                required
+              ></textarea>
+            </div>
+
+            <div class="text-end">
+              <button type="submit" class="btn btn-success">Post Blog</button>
+            </div>
+             <div class="text-start">
+             <a href="/pradeepkumar/blog" class="btn btn-outline-danger">All Blogs</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br/><br/>

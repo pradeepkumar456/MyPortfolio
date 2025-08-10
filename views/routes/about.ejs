@@ -1,0 +1,138 @@
+ <%- include('../layouts/flash') %>
+ <style>
+    :root {
+      --section-padding: 4rem;
+      --heading-size: 2.2rem;
+      --subheading-size: 1.4rem;
+      --text-size: 1.1rem;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .section {
+      padding: var(--section-padding) 1rem;
+    }
+
+    h2 {
+      font-size: var(--heading-size);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-size: var(--subheading-size);
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p, li {
+      font-size: var(--text-size);
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    }
+
+    .tech-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .tech-list li::before {
+      content: "✅ ";
+      margin-right: 0.5rem;
+      color: green;
+    }
+
+    .btn-primary {
+      font-size: 1rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- About Me Section -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <h2 class="text-center my-4 p-1" style="background-color: #ffe4c4;">About Me</h2>
+        <div class="col-md-6 about-image d-flex justify-content-center align-items-center">
+          <img src="/images/adiPhoto.jpeg" alt="Pradeep Kumar"  style="height: 20rem;width: 20rem;"/>
+        </div>
+        <div class="col-md-6">
+          <p style="text-align: justify;" class="p-1">Hi! I'm <strong>Pradeep Kumar</strong>, a passionate and detail-oriented web developer currently pursuing my MCA at KCMT College. I specialize in building dynamic, responsive websites and full-stack applications using modern technologies.</p>
+          <p>I thrive on continuous learning and love translating ideas into working digital solutions. Whether it's a portfolio, booking system, blog, or admin dashboard — I enjoy solving problems through clean and efficient code.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+   <hr/>
+  <!-- Technologies Section -->
+  <section class="section bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4 p-1"style="background-color: #ffe4c4;">Skills & Technologies</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <p class="p-1">I am consistently enhancing my skills in both front-end and back-end development. Here's a snapshot of my current tech stack:</p>
+          <ul class="tech-list p-1">
+            <li>HTML5, CSS3, Bootstrap 5</li>
+            <li>JavaScript (ES6+), DOM Manipulation</li>
+            <li>Node.js & Express.js</li>
+            <li>MongoDB with Mongoose</li>
+            <li>EJS Templating Engine</li>
+            <li>REST API Development</li>
+            <li>Authentication using Passport.js & Bcrypt</li>
+            <li>Version Control with Git & GitHub</li>
+            <li>Deployment using Render & Vercel</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+   <hr/>
+  <!-- Internship Experience Section -->
+  <section class="section bg-white">
+    <div class="container">
+      <h2 class="text-center mb-4 p-1"style="background-color: #ffe4c4;">Internship Experience</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <p class="text-align justify p-1" >I recently completed a Web Development Internship where I worked on real-world tasks and collaborative projects. During this internship, I:</p>
+          <ul class="tech-list p-1">
+            <li>Developed a RESTful API for a book management system</li>
+            <li>Created and deployed a blog section with admin control</li>
+            <li>Implemented secure login systems using sessions and hashed passwords</li>
+            <li>Built features such as contact forms, dashboards, and search filters</li>
+          </ul>
+          <p class="p-1">This hands-on experience helped me refine my project workflow, understand best practices, and prepare for real development challenges.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr/>
+  <!-- Call to Action -->
+  <section class="section bg-light text-center">
+    <div class="container">
+      <h2 class="text-center p-1" style="background-color: #ffe4c4;">Let’s Connect!</h2>
+      <p class="p-1">I'm open to internships, freelance work, and collaborative projects. If you’re looking for a committed and curious developer — let’s talk!</p>
+      <a href="/pradeepkumar/contact" class="btn btn-outline-warning mt-3">Contact Me</a>
+    </div>
+  </section>
+   <hr/>
+</body>
