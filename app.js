@@ -61,9 +61,8 @@ app.use(
     store: store,
     secret: process.env.SECRET, // use a long, random string in production
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: { maxAge: 24 * 7 * 60 * 60 * 1000,
-      expires : Date.now()+ 24 * 7 * 60 * 60 * 1000,
       httpOnly: true,
      }, // Session valid for 10 minutes (in ms)
   })
