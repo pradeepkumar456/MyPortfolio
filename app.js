@@ -1,4 +1,4 @@
- if(process.env.NODE_ENV != "production") {
+  if(process.env.NODE_ENV != "production") {
   require("dotenv").config();
 };
 const express = require("express");
@@ -97,7 +97,6 @@ app.use("/pradeepkumar/blog", blogRoutes);
 
 
 app.get("/", (req, res) => {
-  req.flash("success", "Welcome to our website");
   res.render("routes/index.ejs");
 });
 
