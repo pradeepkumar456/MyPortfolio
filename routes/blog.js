@@ -35,7 +35,7 @@ router.get("/:id", async (req, res) => {
 router.post("/:id/delete",isLoggedIn, async (req, res) => {
   try {
     await Blog.findByIdAndDelete(req.params.id);
-    req.flash("error", "Blog deleted successfully");
+    req.flash("success", "Blog deleted successfully");
     res.redirect("/pradeepkumar/blog");
   } catch (err) {
     req.flash("error", "Something went wrong while deleting the blog.");
