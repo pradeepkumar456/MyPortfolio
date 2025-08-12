@@ -1,0 +1,107 @@
+<style>
+  /* Hover effect on project image */
+  .project-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .project-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Hover effect on buttons */
+  .btn-primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.4);
+  }
+  .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: white;
+    border-color: #6c757d;
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+  }
+</style>
+
+<section class="container py-5">
+  <div class="row g-4">
+    <!-- Left: Project Image -->
+    <div class="col-md-6">
+      <img
+        src="/images/project2.png"
+        alt="Project Image"
+        class="img-fluid rounded shadow-sm project-image"
+        style="border: 1px solid black"
+      />
+      <br/> <br/> 
+      <p class="text-muted mt-3 d-flex justify-content-center align-items-center">Website Photo </p>
+    </div>
+
+    <!-- Right: Project Info -->
+    <div class="col-md-6 d-flex flex-column justify-content-center">
+      <h2 class="mb-3 text-center " style="background-color: bisque;">Portfoilio Website</h2>
+      <p class="text-muted mb-4" style="text-align: justify;">
+        My portfolio website is a modern, responsive platform designed to
+        showcase my skills, projects, and professional journey as a developer.
+        It highlights my expertise in front-end and back-end technologies,
+        featuring clean design, smooth navigation, and dynamic content that
+        adapts seamlessly to all devices.
+      </p>
+      <p class="mb-4" style="text-align: justify;">
+        The website includes detailed sections about my education, experience,
+        technical skills, and selected projects with descriptions and live
+        demos. It also features an easy-to-use contact form, allowing visitors
+        to get in touch directly.
+      </p>
+      <p class="mb-4" style="text-align: justify;">
+        Built using HTML, CSS, JavaScript, and Bootstrap for the front end, with
+        Node.js, Express, and MongoDB powering the backend, my portfolio
+        demonstrates my full-stack development capabilities. It is optimized for
+        fast loading, SEO-friendly, and designed with user experience in mind.
+      </p>
+      <hr/>
+      <ul class="list-group list-group-flush mb-4">
+        <li class="list-group-item">
+          <strong>Website Type:</strong> Personal Portfolio
+        </li>
+        <li class="list-group-item">
+          <strong>Duration:</strong> June 2025 - July 2025
+        </li>
+        <li class="list-group-item">
+          <strong>Technologies:</strong> HTML, CSS, JavaScript, Bootstrap,
+          Node.js, Express, MongoDB
+        </li>
+        <li class="list-group-item">
+          <strong>Role:</strong> Full Stack Developer
+        </li>
+        <li class="list-group-item">
+          <strong>Features:</strong> Responsive design, Contact form with email
+          integration, Dynamic project showcase, SEO optimized
+        </li>
+        <li class="list-group-item">
+          <strong>Hosting:</strong> Deployed on Render.
+        </li>
+        <li class="list-group-item">
+          <strong>Version Control:</strong> GitHub repository with CI/CD
+          pipeline
+        </li>
+      </ul>
+
+      <div>
+        <a
+          href="/"
+          class="btn btn-outline-primary me-2"
+          target="_blank"
+          rel="noopener"
+          >View Live</a
+        >
+        <a
+          href="https://github.com/pradeepkumar456/MyPortfolio"
+          class="btn btn-outline-secondary"
+          target="_blank"
+          rel="noopener"
+          >Source Code</a
+        >
+      </div>
+    </div>
+  </div>
+</section>

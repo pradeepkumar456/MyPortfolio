@@ -81,24 +81,21 @@
   </nav>
   </div>
   <script>
-    let dashbtn = document.querySelector(".slideBtn1");
-    let bookbtn = document.querySelector(".slideBtn2");
-    let userbtn = document.querySelector(".slideBtn3");
-    let msgbtn = document.querySelector(".slideBtn4");
-  
-    if (window.location.pathname === "/pradeepkumar/admin/dashboard") {
-      dashbtn.classList.add("active");
-    } else {
-      dashbtn.classList.remove("active");
-    }
-    if (window.location.pathname === "/pradeepkumar/admin/message") {
-      msgbtn.classList.add("active");
-    } else {
-      msgbtn.classList.remove("active");
-    }
-    if (window.location.pathname === "/pradeepkumar/admin/dashboard") {
-      dashbtn.classList.add("active");
-    } else {
-      dashbtn.classList.remove("active");
-    }
+    const path = window.location.pathname;
+
+const btnMap = {
+  "/pradeepkumar/admin/dashboard": dashbtn,
+  "/pradeepkumar/admin/message": msgbtn,
+  "/pradeepkumar/admin/blog": dashbtn,
+  "/pradeepkumar/blog/new": dashbtn,
+};
+
+for (const [route, btn] of Object.entries(btnMap)) {
+  if (path === route) {
+    btn.classList.add("active");
+  } else {
+    btn.classList.remove("active");
+  }
+}
+
   </script> 

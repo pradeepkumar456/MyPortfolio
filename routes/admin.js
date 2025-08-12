@@ -6,6 +6,7 @@ const { isLoggedIn, redirectIfLoggedIn } = require("../middleware.js");
 const User = require("../models/users.js");
 const bcrypt = require("bcrypt");
 const flash = require("connect-flash");
+const nodemailer = require("nodemailer");
 
 // 👉 GET: Change Password Form
 router.get('/change-password', isLoggedIn, (req, res) => {
@@ -110,26 +111,78 @@ router.get("/message",isLoggedIn, async (req, res) => {
 
 
 // Post User Messages
+//  router.post("/message", async (req, res) => {
+//   const { name, email, mobileNo, city, message } = req.body;
+
+//   try {
+//     const user = new User({
+//       name:name,
+//       email: email,
+//       mobileNo: mobileNo,
+//       city: city,
+//       message: message,
+//     });
+
+//     const newUser = await user.save();
+
+//     req.flash("success", "Thank You , Message send successfully!");
+//     // console.log(newUser);
+//     res.redirect("/");
+//   } catch (error) {
+//     req.flash("error", "Error occurred while sending message.");
+//     console.log(error);
+//     res.redirect("/");
+//   }
+// });
+
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
+
+// transporter.verify((error, success) => {
+//   if (error) {
+//     console.log('❌ Mailer Error:', error);
+//   } else {
+//     console.log('✅ Mailer Ready to Send');
+//   }
+// });
+
 router.post("/message", async (req, res) => {
   const { name, email, mobileNo, city, message } = req.body;
 
   try {
-    const user = new User({
-      name:name,
-      email: email,
-      mobileNo: mobileNo,
-      city: city,
-      message: message,
+    // Save user message in DB
+    const user = new User({ name, email, mobileNo, city, message });
+    await user.save();
+
+    // Send email to admin
+    await transporter.sendMail({
+      from: `"Pradeep Portfolio" <${process.env.EMAIL_USER}>`,
+      to: process.env.ADMIN_EMAIL,
+      subject: `New Contact from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\nMobile No: ${mobileNo}\nCity: ${city}\nMessage: ${message}`,
     });
 
-    const newUser = await user.save();
+    // Send confirmation email to user (if different from admin)
+    if (email.toLowerCase() !== process.env.ADMIN_EMAIL.toLowerCase()) {
+      await transporter.sendMail({
+        from: `"Pradeep Kumar" <${process.env.EMAIL_USER}>`,
+        to: email,
+        subject: 'Thanks for contacting me',
+        text: `Hi ${name},\nThanks for reaching out. I will reply soon.\n Regards,\nPradeep Kumar`,
+      });
+    }
 
-    req.flash("success", "Thank You , Message send successfully!");
-    console.log(newUser);
+    req.flash("success", "Thank You, message sent successfully!");
     res.redirect("/");
   } catch (error) {
+    console.error('❌ Error:', error);
     req.flash("error", "Error occurred while sending message.");
-    console.log(error);
     res.redirect("/");
   }
 });

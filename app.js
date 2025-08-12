@@ -1,4 +1,4 @@
-  if(process.env.NODE_ENV != "production") {
+   if(process.env.NODE_ENV != "production") {
   require("dotenv").config();
 };
 const express = require("express");
@@ -15,6 +15,8 @@ const adminRoutes = require("./routes/admin.js");
 const userRoutes = require("./routes/user.js");
 const blogRoutes = require("./routes/blog.js");
 const ExpressError = require("./utils/ExpressError.js");
+const projectRoutes = require("./routes/project.js");
+
 
 
 // const  = "mongodb://127.0.0.1:27017/Pradeep"; // or use Atlas URI
@@ -94,6 +96,8 @@ passport.deserializeUser(Admin.deserializeUser());
 app.use("/pradeepkumar/admin", adminRoutes);
 app.use("/pradeepkumar", userRoutes);
 app.use("/pradeepkumar/blog", blogRoutes);
+app.use("/pradeepkumar/project", projectRoutes);
+
 
 
 app.get("/", (req, res) => {
