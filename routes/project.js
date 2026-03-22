@@ -9,4 +9,8 @@ router.get("/portfolioproject", (req, res) => {
     res.render("projects/portfolio.ejs");
 });
 
+router.get("/libraryportalproject", (req, res) => {  
+    res.render("projects/library.ejs");
+});
+
 module.exports = router;

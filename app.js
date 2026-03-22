@@ -20,7 +20,16 @@ const projectRoutes = require("./routes/project.js");
 
 
 // const  = "mongodb://127.0.0.1:27017/Pradeep"; // or use Atlas URI
-const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = process.env.MONGO_URL;
+
+async function main() {
+  await mongoose.connect(dbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    tls: true,
+  });
+}
+
 main()
   .then(() => {
     console.log("Connected to MongoDB");
@@ -28,9 +37,6 @@ main()
   .catch((err) => {
     console.log("Error connecting to MongoDB:", err);
   });
-async function main() {
-  await mongoose.connect(dbUrl);
-}
 
 require("./config/passport.js")(passport);
 
