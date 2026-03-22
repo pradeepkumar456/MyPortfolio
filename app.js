@@ -20,7 +20,7 @@ const projectRoutes = require("./routes/project.js");
 
 
 // const  = "mongodb://127.0.0.1:27017/Pradeep"; // or use Atlas URI
-const dbUrl = process.env.MONGO_URL;
+const dbUrl = process.env.ATLASDB_URL;
 
 async function main() {
   await mongoose.connect(dbUrl, {
