@@ -23,11 +23,7 @@ const projectRoutes = require("./routes/project.js");
 const dbUrl = process.env.ATLASDB_URL;
 
 async function main() {
-  await mongoose.connect(dbUrl, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    tls: true,
-  });
+  await mongoose.connect(dbUrl);
 }
 
 main()
